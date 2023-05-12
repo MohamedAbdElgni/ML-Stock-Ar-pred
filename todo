@@ -1,1 +1,13 @@
-- implement model module to train a model for every stock data and returns the predicted values for the next 7 days
+# ToDo:
+1-Implement model module to train a model for stocks data and returns the predicted values for the next 7 days.
+
+
+
+
+
+
+
+
+
+*Notes:*
+    - Total execution time: 161.26258826255798 seconds for getting the data from the API and saving it to the database for 7 stocks .

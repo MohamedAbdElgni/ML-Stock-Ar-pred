@@ -1,7 +1,9 @@
 from typing import Any
+
 import yfinance as yf
 
 import pandas as pd
+
 
 
 class YahooFinance:
@@ -18,7 +20,7 @@ class YahooFinance:
 
         self.ticker: str = ticker
 
-    def get_data(self) -> Any:
+    def get_data(self) -> pd.DataFrame:
         """
         Get data from Yahoo Finance API
 
