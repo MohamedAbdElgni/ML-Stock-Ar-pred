@@ -33,6 +33,7 @@ class YahooFinance:
 
 
 class SQLrepo:
+
     def __init__(self, connection):
         self.connection = connection
 
@@ -77,7 +78,11 @@ class SQLrepo:
             query = f"SELECT * FROM {table_name} LIMIT {limit}"
         else:
             query = f"SELECT * FROM {table_name}"
-        df = pd.read_sql(query, self.connection, parse_dates=[
-                         "Date"], index_col=["Date"])
+        df = pd.read_sql(
+            query,
+            self.connection,
+            parse_dates=["Date"],
+            index_col=["Date"]
+        )
 
         return df
