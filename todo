@@ -1,0 +1,1 @@
+- implement model module to train a model for every stock data and returns the predicted values for the next 7 days
