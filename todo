@@ -17,3 +17,4 @@
 
 *Notes:*
     - Total execution time: 161.26258826255798 seconds for getting the data from the API and saving it to the database for 7 stocks .
+    - total execution time with multiprocessing:  Total execution time: 46.50936412811279 seconds for getting the data from the API and saving   it to the database for 7 stocks .

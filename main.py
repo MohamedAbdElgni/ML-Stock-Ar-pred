@@ -24,31 +24,32 @@ ls_tick={
     "META":"META",
 }
 
-flag = True #flag to check if all data downloaded successfully
-start_time = time.time() 
-while flag:
-    for key, val in ls_tick.items():
-        table_name = key
-        tick = val
-        data = YahooFinance(tick)
-        print(f"Trying Downloading data for {table_name} from Yahoo Finance API")
-        data.get_data()
-        if len(data.data) <10:
-            print(f"Data for {table_name} not available try again")
-            #time.sleep(60) 
-            break
-        else:
-            print(f"{table_name} Data downloaded!!!!!")
-            repo.insert_table(table_name=table_name,records=data.data)
-            
-        #time.sleep(60) #sleep for 60 seconds
+def process_stock(ticker,table_name):
+    data = YahooFinance(ticker)
+    print(f"Trying Downloading data for {table_name} from Yahoo Finance API")
+    data.get_data()
+    if len(data.data) < 10:
+        print(f"Data for {table_name} not available, try again")
     else:
-        print(f"All data downloaded successfully for all stocks and stored in sqlite \nTables Names {list(ls_tick.keys())}")
-        flag = False
+        print(f"Data for {table_name} downloaded !!!!")
+        repo.insert_table(table_name=table_name, records=data.data)
+        
 
-end_time = time.time()  # Record the end time
-execution_time = end_time - start_time  # Calculate the execution time in seconds
-print(f"Total execution time: {execution_time} seconds")
+if __name__ == '__main__':
+    start_time = time.time()
+    
+    processes = []
+    for  table_name,ticker in ls_tick.items():
+        p = multiprocessing.Process(target=process_stock, args=(ticker,table_name))
+        processes.append(p)
+        p.start()
+    
+    for p in processes:
+        p.join()
+
+    end_time = time.time()  # Record the end time
+    execution_time = end_time - start_time  # Calculate the execution time in seconds
+    print(f"Total execution time: {execution_time} seconds")
 
 
 

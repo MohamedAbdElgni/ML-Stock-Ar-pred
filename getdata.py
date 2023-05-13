@@ -107,4 +107,29 @@ class SQLrepo:
         return {
             "table_deleted": True
         }
+    def delete_all_tables(self):
+        """
+        Delete all tables from the database
+        Returns
+        -------
+        dict
+            Dictionary with the following keys:
+                - tables_deleted: List of tables that were deleted
+        """
+        query = "SELECT name FROM sqlite_master WHERE type='table'"
+        cursor = self.connection.cursor()
+        cursor.execute(query)
+        tables = cursor.fetchall()
+        
+        tables_deleted = []
+        for table in tables:
+            table_name = table[0]
+            query = f"DROP TABLE {table_name}"
+            self.connection.execute(query)
+            tables_deleted.append(table_name)
+        
+        print("All tables deleted successfully")
+        return {
+            "tables_deleted": tables_deleted
+        }
         
