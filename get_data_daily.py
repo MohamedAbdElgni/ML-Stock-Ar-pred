@@ -13,7 +13,8 @@ connection = sqlite3.connect(database=db_name, check_same_thread=False)
 
 repo = SQLrepo(connection=connection)
 
-
+#Important to note that the table name should be the same as the ticker name and the values used for the API requests,
+#Otherwise the code will not work, and table name is the company global name to make naming easy in the front end .
 ls_tick = {
     "Apple": "AAPL",
     "IBM": "IBM",
@@ -24,8 +25,9 @@ ls_tick = {
     "META": "META",
 }
 
-
+#using multiprocessing to download data for all stocks at the same time for faster execution
 def process_stock(ticker, table_name):
+    # Add Exception handling -- To be added later
     data = YahooFinance(ticker)
     print(f"Trying Downloading data for {table_name} from Yahoo Finance API")
     data.get_data()

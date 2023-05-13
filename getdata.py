@@ -5,7 +5,6 @@ import yfinance as yf
 import pandas as pd
 
 
-
 class YahooFinance:
     """
     Class to get data from Yahoo Finance API
@@ -24,13 +23,18 @@ class YahooFinance:
         """
         Get data from Yahoo Finance API
 
-        :return: data from Yahoo Finance API
+        >>> data = YahooFinance('AAPL').get_data()
+        >>> data.head()
+
+        :return 
+            Pandas Data Frame with the following columns:
+                - Date
+                - Close
         """
 
         data = yf.Ticker(self.ticker)
         data = data.history(period="max")
-        print("Data from Yahoo Finance API downloaded successfully")
-        self.data = data  # save data to class variable
+        self.data = data['Close']  # save data to class variable
         return data
 
 
@@ -88,7 +92,8 @@ class SQLrepo:
         )
 
         return df
-    def delete_table(self,table_name):
+
+    def delete_table(self, table_name):
         """
         Delete table from database
         Parameters
@@ -107,6 +112,7 @@ class SQLrepo:
         return {
             "table_deleted": True
         }
+
     def delete_all_tables(self):
         """
         Delete all tables from the database
@@ -115,21 +121,41 @@ class SQLrepo:
         dict
             Dictionary with the following keys:
                 - tables_deleted: List of tables that were deleted
+        >>> repo.delete_all_tables()
+        Returns:
+        ----------
+            "All tables deleted successfully"
+            Dict: {"tables_deleted": tables_deleted}
         """
         query = "SELECT name FROM sqlite_master WHERE type='table'"
         cursor = self.connection.cursor()
         cursor.execute(query)
         tables = cursor.fetchall()
-        
+
         tables_deleted = []
         for table in tables:
             table_name = table[0]
             query = f"DROP TABLE {table_name}"
             self.connection.execute(query)
             tables_deleted.append(table_name)
-        
+
         print("All tables deleted successfully")
         return {
             "tables_deleted": tables_deleted
         }
-        
+
+    def get_tabels_names(self):
+        """Get the names of all tables in the database
+        Returns:
+        ----------
+        list
+            List of tables in the database
+        >>> get_tabels_names() Output >>>  ['AAPL']
+        """
+        query = """SELECT name FROM sqlite_master WHERE type='table'"""
+
+        cursor = self.connection.cursor()
+
+        cursor.execute(query)
+
+        print(cursor.fetchall())
