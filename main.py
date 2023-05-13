@@ -1,9 +1,7 @@
 from getdata import YahooFinance
 from getdata import SQLrepo
 import sqlite3
-from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
-import matplotlib.pyplot as plt
-import plotly.express as px
+import multiprocessing
 import time
 
 from arch import arch_model
@@ -26,7 +24,7 @@ ls_tick={
     "META":"META",
 }
 
-flag = True
+flag = True #flag to check if all data downloaded successfully
 start_time = time.time() 
 while flag:
     for key, val in ls_tick.items():
@@ -40,12 +38,12 @@ while flag:
             #time.sleep(60) 
             break
         else:
-            print(f"Data for {table_name} downloaded successfully")
+            print(f"{table_name} Data downloaded!!!!!")
             repo.insert_table(table_name=table_name,records=data.data)
             
         #time.sleep(60) #sleep for 60 seconds
     else:
-        print(f"All data downloaded successfully for all stocks and stored in sqlite \ntables {ls_tick.keys()}")
+        print(f"All data downloaded successfully for all stocks and stored in sqlite \nTables Names {list(ls_tick.keys())}")
         flag = False
 
 end_time = time.time()  # Record the end time

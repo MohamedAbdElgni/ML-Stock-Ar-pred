@@ -1,5 +1,11 @@
 # ToDo:
 1-Implement model module to train a model for stocks data and returns the predicted values for the next 7 days.
+2- optmize the code to be more efficient and faster. 
+    a- use multiprocessing to get the data from the API and save it to the database.
+    b- use multiprocessing to get the data from the database and train the model.
+    c- use multiprocessing to get the data from the database and predict the next 7 days.
+    d- use multiprocessing to get the data from the database and save the predicted values to the database.
+    e- try to update existing tables instead of downloading the data from scratch.
 
 
 

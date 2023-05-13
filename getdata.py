@@ -88,3 +88,23 @@ class SQLrepo:
         )
 
         return df
+    def delete_table(self,table_name):
+        """
+        Delete table from database
+        Parameters
+        ----------
+        table_name : str
+            Name of the table to delete
+        Returns
+        ----------
+        dict
+            Dictionary with the following keys:
+                - table_deleted: True if table was deleted, False otherwise
+        """
+        query = f"DROP TABLE {table_name}"
+        self.connection.execute(query)
+        print(f"Table {table_name} deleted successfully")
+        return {
+            "table_deleted": True
+        }
+        
