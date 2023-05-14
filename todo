@@ -1,20 +1,7 @@
 # ToDo:
 1-Implement model module to train a model for stocks data and returns the predicted values for the next 7 days.
-2- optmize the code to be more efficient and faster. 
-    a- use multiprocessing to get the data from the API and save it to the database.
-    b- use multiprocessing to get the data from the database and train the model.
-    c- use multiprocessing to get the data from the database and predict the next 7 days.
-    d- use multiprocessing to get the data from the database and save the predicted values to the database.
-    e- try to update existing tables instead of downloading the data from scratch.
-
-
-
-
-
-
-
-
-
+2-Add the connection to the SQL repo class and make args to only DBname.
+3-should be able to convert to this .resample('d').ffill() accepeted' format.
 *Notes:*
     - Total execution time with no multiprocessing: 161.26258826255798 seconds for getting the data from the API and saving it to the database for 7 stocks .
-    - Total execution time with multiprocessing: 46.50936412811279 seconds for getting the data from the API and saving it to the database for 7 stocks .
+    - Total execution time with multiprocessing: 46.509 seconds for getting the data from the API and saving it to the database for 7 stocks .

@@ -4,7 +4,7 @@ import sqlite3
 import multiprocessing
 import time
 
-from arch import arch_model
+
 
 
 db_name = "stocks.sqlite"

@@ -4,6 +4,8 @@ import yfinance as yf
 
 import pandas as pd
 
+import sqlite3
+
 
 class YahooFinance:
     """
@@ -41,6 +43,7 @@ class YahooFinance:
 class SQLrepo:
 
     def __init__(self, connection):
+
         self.connection = connection
 
     def insert_table(self, table_name, records):
@@ -87,8 +90,6 @@ class SQLrepo:
         df = pd.read_sql(
             query,
             self.connection,
-            parse_dates=["Date"],
-            index_col=["Date"]
         )
 
         return df
