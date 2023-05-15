@@ -19,7 +19,7 @@ connection = sqlite3.connect("stocks.sqlite", check_same_thread=False)
 repo = SQLrepo(connection=connection)
 
 st.set_page_config(page_title="Stocks App",
-                   page_icon=":moneybag:", layout="wide")
+                   page_icon=":moneybag:")
 
 st.markdown(f"<h2 style='text-align: center; '>Stock Returns Prediction ML App</h2>",
             unsafe_allow_html=True)
