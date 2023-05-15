@@ -2,7 +2,7 @@ name: Daily Data Processing
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "* * * * *"
 
 jobs:
   process_data:
