@@ -2,20 +2,19 @@ name: Daily Data Processing
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "0 21 * * *"
 
 jobs:
   process_data:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
         with:
-          python-version: "3.10.2" 
+          python-version: '3.10'
+
+    
 
       - name: Install dependencies
         run: |
