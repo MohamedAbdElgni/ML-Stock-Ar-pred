@@ -13,6 +13,10 @@ connection = sqlite3.connect(database=db_name, check_same_thread=False)
 
 repo = SQLrepo(connection=connection)
 
+repo.delete_all_tables()
+
+print("All tables deleted from the database")
+
 #Important to note that the table name should be the same as the ticker name and the values used for the API requests,
 #Otherwise the code will not work, and table name is the company global name to make naming easy in the front end .
 ls_tick = {

@@ -35,7 +35,7 @@ class YahooFinance:
         """
 
         data = yf.Ticker(self.ticker)
-        data = data.history(period="max")
+        data = data.history(start='2021-01-01')
         self.data = data['Close']  # save data to class variable
         return data
 
@@ -68,6 +68,7 @@ class SQLrepo:
 
     def read_table(self, table_name, limit=None):
         """Read table from database
+
         Parameters
         ----------
         table_name : str

@@ -2,6 +2,10 @@
 1-Implement model module to train a model for stocks data and returns the predicted values for the next 7 days.
 2-Add the connection to the SQL repo class and make args to only DBname.
 3-should be able to convert to this .resample('d').ffill() accepeted' format.
+
 *Notes:*
     - Total execution time with no multiprocessing: 161.26258826255798 seconds for getting the data from the API and saving it to the database for 7 stocks .
     - Total execution time with multiprocessing: 46.509 seconds for getting the data from the API and saving it to the database for 7 stocks .
+
+# Next:
+1- Add Module for Crypto Curr's
