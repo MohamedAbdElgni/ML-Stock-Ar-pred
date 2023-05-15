@@ -18,6 +18,9 @@ warnings.simplefilter(action="ignore", category=FutureWarning)
 connection = sqlite3.connect("stocks.sqlite", check_same_thread=False)
 repo = SQLrepo(connection=connection)
 
+st.set_page_config(page_title="Stocks App",
+                   page_icon=":moneybag:", layout="wide")
+
 st.markdown(f"<h2 style='text-align: center; '>Stock Returns Prediction ML App</h2>",
             unsafe_allow_html=True)
 st.markdown(f"<h4 style='text-align: center; '>Daily Updating Our Models and Data</h4>",
