@@ -28,3 +28,8 @@ for table_name in ls_tick.keys():
         f"Model for {table_name} trained and inserted into the database under name [{table_name}_pred]")
     
 print("All models trained and inserted into the database")
+
+
+
+
+    
