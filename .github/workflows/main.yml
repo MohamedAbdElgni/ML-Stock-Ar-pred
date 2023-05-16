@@ -36,5 +36,5 @@ jobs:
             git config --global user.email "mohamed.kk878@gmail.com"
             git add .
             git commit -m "Daily get Data and Train Models by Cron job"
-            git push https://github.com/MohamedAbdElgni/fastdata.git HEAD:master
+            git push https://github.com/MohamedAbdElgni/fastdata HEAD:master
 
