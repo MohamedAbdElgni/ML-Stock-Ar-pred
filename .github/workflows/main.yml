@@ -1,19 +1,38 @@
-name: Naive Cron Job
+# This workflow will install Python dependencies, run get_data_daily.py and then train_model_daily.py every 1 minute
+
+
+name: Daily Data Update 2020
 
 on:
   schedule:
-    - cron: "*/3 * * * *"
+    - cron: '30 21 * * *'
   workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+      runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      steps:
+        - uses: actions/checkout@v2
+        - name: Set up Python 3.8
+          uses: actions/setup-python@v2
+          with:
+            python-version: "3.8"
+        - name: Install dependencies
+          run: |
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt
+        - name: Run get_data_daily.py
+          run: |
+            python get_data_daily.py
+        - name: Run train_model_daily.py
+          run: |
+            python train_model_daily.py
+        - name: Push changes
+          run: |
+            git config --global user.name "Mohamed Abd-El-Gani"
+            git config --global user.email "mohamed.kk878@gmail.com"
+            git add .
+            git commit -m "Daily get Data and Train Models"
+            git push origin master
 
-      - name: Run cron job
-        run: |
-          # Replace this with the command you want to run
-          echo "Running cron job"
