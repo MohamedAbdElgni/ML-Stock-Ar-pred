@@ -31,5 +31,5 @@ jobs:
             git config --global user.email "mohamed.kk878@gmail.com"
             git add .
             git commit -m "Daily get Data and Train Models"
-            git push origin master
+            git push origin main
 
