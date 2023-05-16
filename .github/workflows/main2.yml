@@ -5,7 +5,7 @@ name: Daily Data Update 2025
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '37 13 * * *'
 
 jobs:
     build:
