@@ -17,7 +17,7 @@ This is a simple stock prediction app that uses machine learning to predict the 
 ## Files
 
 1. Deploy.py: The main file that runs the app
-2. stocks.sqlite: The database that stores the data collected from yfinance
+2. stocks.sqlite: The database that stores the data collected from yfinance.
 3. models.py: The file that contains the models used in the app and it's a custom class .
 4. getdata.py: The file that contains the functions that collect the data from yfinance and stores it in the database.
 5. get_data_daily.py: This file uses the getdata.py file to collect the data every day.
@@ -29,17 +29,18 @@ This is a simple stock prediction app that uses machine learning to predict the 
 
 ## Demo
 
-    the app is deployed on Streamlit sharing and can be accessed using the link below
+    The app is deployed on Streamlit sharing and can be accessed using the link below
 <!-- https://mohamedabdelgni-fastdata-deploy-xnkwsa.streamlit.app/ -->
 
 ## Data
 
-    the data is collected using the yfinance library and is stored in sqlite database stocks.sqlite
+    The data is collected using the yfinance library and is stored in sqlite database stocks.sqlite
 
 ## Models
 
-    the models are active learning models that are trained on the data collected from yfinance every day
-    and stored its predictions in the database under the table for every stock with the name of the stock + _pred
+    The models are active  that are trained on the data every day
+    and stored its predictions in the database under the table for every stock with the name of the stock+_pred
+    >>>> Example: if the stock is AAPL the table name will be Apple_pred
 
 ## Back testing
 
