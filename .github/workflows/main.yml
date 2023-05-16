@@ -26,6 +26,10 @@ jobs:
         - name: Run get_data_daily.py
           run: |
             python get_data_daily.py
+            
+        - name: Run train_model_daily.py
+          run: |
+            python train_model_daily.py
       
           
 
