@@ -29,18 +29,14 @@ jobs:
       
           
 
-# mail :- 45873305+bismohamed@users.noreply.github.com
-# name :- Mohamed Abd-El-Gani
-# commit message :- hello actions and push to main branch using github actions and email and name are set to github actions
-# commit hash :- 0f0b0f0
-# commit date :- 2021-05-30 21:30:00
+
         
         - name: push to main branch
           run: |
             git config --global user.email "45873305+bismohamed@users.noreply.github.com"
             git config --global user.name "Mohamed Abd-El-Gani"
             git add .
-            git commit -m "hello actions"
+            git commit -m "Updating Via Actions Workflows "
             git push origin master
 
 
