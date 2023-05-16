@@ -26,11 +26,10 @@ This is a simple stock prediction app that uses machine learning to predict the 
 8. requirements.txt: This file contains the requirements to run the app.
 9. .github/workflows/main.yml: This file contains the github actions to run the app every day and collect the data and train the models.
 
-
 ## Demo
 
-    The app is deployed on Streamlit sharing and can be accessed using the link below
-<!-- https://mohamedabdelgni-fastdata-deploy-xnkwsa.streamlit.app/ -->
+    The app is deployed on Streamlit sharing and can be accessed using the link below :- 
+    <a href="https://mohamedabdelgni-fastdata-deploy-xnkwsa.streamlit.app/" target="_blank">App Link</a>
 
 ## Data
 
