@@ -1,7 +1,7 @@
 # This workflow will install Python dependencies, run get_data_daily.py and then train_model_daily.py every 1 minute
 
 
-name: Daily Data Update 2020
+name: Daily Data Update
 
 on:
   schedule:
