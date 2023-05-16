@@ -29,12 +29,12 @@ jobs:
           #run: |
             #python train_model_daily.py
         - name: Push changes
-          env:
-            PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
           run: |
             git config --global user.name "Mohamed Abd-El-Gani"
             git config --global user.email "mohamed.kk878@gmail.com"
             git add .
             git commit -m "Daily get Data and Train Models by Cron job"
-            git push https://github.com/MohamedAbdElgni/fastdata HEAD:master
+            git push https://github.com/MohamedAbdElgni/fastdata.git HEAD:master
+          env:
+            PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
 
