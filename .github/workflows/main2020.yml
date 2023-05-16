@@ -3,7 +3,7 @@ name: Daily Data Update 2020
 
 on:
   schedule:
-    - cron: '*/1 * * * *'
+    - cron: '29 1 * * *'
 
 jobs:
     build:
