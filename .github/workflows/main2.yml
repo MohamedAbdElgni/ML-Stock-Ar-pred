@@ -1,11 +1,11 @@
 # This workflow will install Python dependencies, run get_data_daily.py and then train_model_daily.py every 1 minute
 
 
-name: Daily Data Update 2020
+name: Daily Data Update 2025
 
 on:
   schedule:
-    - cron: '*/1 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
     build:
@@ -27,4 +27,3 @@ jobs:
         - name: Run train_model_daily.py
           run: |
             python train_model_daily.py
-        
