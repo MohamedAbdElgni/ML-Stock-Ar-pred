@@ -15,6 +15,7 @@ This is a simple stock prediction app that uses machine learning to predict the 
 2. Simply Click Go and the app will predict the price of the stock
 
 ## Files
+
 1. Deploy.py: The main file that runs the app
 2. stocks.sqlite: The database that stores the data collected from yfinance
 3. models.py: The file that contains the models used in the app and it's a custom class .
@@ -46,14 +47,16 @@ This is a simple stock prediction app that uses machine learning to predict the 
 
 ## Soon
 
-    the app will be deployed on heroku and will be updated with more features and models-->
+    the app will be deployed on a Cloud and will be updated with more features and models-->
+
 1. Adding Trading Strategies to the app.
 2. Adding more models to the app.
 3. Adding more historical data to the app.
 4. Add a grid search to find the best parameters for the model for ever stock.
 5. Add a Crypto currency prediction section to the app.
+6. Add Hourly and minute data and predictions to the app.
 
-## Contuributing
+## Contributions
 
     Feel free to contribute to the app by adding more models or more features to the app.
     under Branch develop
