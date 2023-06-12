@@ -30,7 +30,7 @@ This is a simple stock prediction app that uses machine learning to predict the 
 
     The app is deployed on Streamlit sharing and can be accessed using the link below :- 
     
-[App](https://mohamedabdelgni-mlstockarpred-deploy-n5z1hw.streamlit.app/).
+[App](https://mohamedabdelgni-mlstockarpred-deploy-ho85w7.streamlit.app/).
 
 ## Data
 
